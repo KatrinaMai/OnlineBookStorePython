@@ -1,29 +1,91 @@
 # OnlineBookStorePython
-This is a project in database class. 
+This is a web-based bookstore application developed for a database management class project.
+The application uses Flask for the web interface and SQLite for storing bookstore information.
+Users can view books, choose between buying and renting books.
 
+## Project Overivew
+
+
+## Requirements
+The following software is required:
+- Python 3.0 or newer
+- pip
+- Flask
+- SQLite
 
 ## Installation: 
-1. Install PIP package:
+### Step 1. Download or clone the project
+```
+git clone <repository-url>
+cd OnlineBookStorePython
+```
+
+### Step 2. Upgrade pip
+
 Windows:
-```py -m pip install --upgrade pip```
+```bash
+py -m pip install --upgrade pip
+```
 
 macOS/ Linux:
-```python3 -m pip install --upgrade pip```
+```bash
+python3 -m pip install --upgrade pip
+```
 
-2. Create the virtual environment:
-```python3 -m venv venv```
+### Step 3. Create the virtual environment:
+Windows:
+```bash
+py -m venv venv
+```
 
-3. Active the environment:
-```source venv/bin/activate```
+macOS/ Linux:
+```bash
+python3 -m venv venv
+```
 
-4. Install flask inside the virtual environment:
-```pip install flask```
+### Step 4. Activate the virtual environment
+Windows:
+```bash
+venv\Scripts\activate
+```
 
-5. To get database:
-```python3 database.py````
+macOS/ Linux:
+```bash
+source venv/bin/activate
+```
 
-6. Run application:
-```python3 app.py```
+### Step 5. Install Flask (project dependency)
+```bash
+pip install flask
+```
 
-OR:
-```flask --app app run```
+### Step 6. Running the application
+Windows:
+```bash
+python database.py
+python app.py
+```
+macOS/ Linux:
+```bash
+python3 database.py
+python3 app.py
+```
+Open the following address in a web browser:
+```bash
+http://127.0.0.1:5000
+```
+
+### Step 7. Stopping the application
+Press Ctr + C
+
+### Troubleshooting
+If Flask is not found, make sure the virtual environment is activated and run:
+```bash
+pip install flask
+```
+If the database is missing or corrupted, delete bookstore.db and initialize it again:
+```bash
+python3 database.py
+```
+
+
