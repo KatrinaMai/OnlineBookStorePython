@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Online Bookstore</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="top-header">
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='images/book_icon.jpeg') }}" alt="Book-icon" class="book-icon">
+
+            <div class="brand">
+                <h1>Online Bookstore</h1>
+                <span>Read everywhere, escape anywhere</span>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            {% if logged_in %}
+            <a href="{{ url_for('logout') }}" class="user-link">
+                Logout
+            </a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="user-link">
+                Login
+            </a>
+            {% endif %}
+
+            <a href="{{ url_for('cart') }}" class="cart-link">
+                🛒 Cart
+                <span class="cart-count">{{ cart_count }}</span>
+            </a>
+        </div>
+
+
+    </header>
+
+    <h2>List of Books</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Year</th>
+            <th>Sale Price</th>
+            <th>Rent Price</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.bookID }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.publisher }}</td>
+            <td>{{ book.year }}</td>
+            <td>${{ book.sale_price }}</td>
+            <td>${{ book.rent_price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</body>
+
+</html>
