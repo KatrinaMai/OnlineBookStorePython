@@ -51,6 +51,21 @@ body {
     gap: 35px;
 }
 
+.book-banner {
+    position: relative;
+    width: 100%;
+    max-height: 440px;
+    overflow: hidden;
+}
+
+.book-banner img {
+    display: block;
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 table {
     border-collapse: collapse;
@@ -74,4 +89,153 @@ th {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+
+/* ADDED 11/27:
+   Login and create-account page layout.
+*/
+.auth-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* ADDED 11/27:
+   Card used for login and registration forms.
+*/
+.auth-card,
+.account-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ADDED 11/27 */
+.auth-card h2,
+.account-card h2 {
+    margin-top: 0;
+    color: #243b32;
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+/* ADDED 11/27 */
+.auth-card p,
+.account-card p {
+    color: #666666;
+}
+
+/* ADDED 11/27 */
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ADDED 11/27 */
+.auth-card label {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    color: #243b32;
+    font-weight: bold;
+}
+
+/* ADDED 11/27 */
+.auth-card input {
+    padding: 11px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* ADDED 11/27 */
+.auth-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: #243b32;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ADDED 11/27 */
+.auth-button:hover {
+    background-color: #365b4b;
+}
+
+/* ADDED 11/27 */
+.auth-footer {
+    margin-top: 25px;
+    text-align: center;
+}
+
+/* ADDED 11/27 */
+.auth-footer a,
+.back-link {
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ADDED 11/27 */
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ADDED 11/27:
+   Flash messages for login and registration feedback.
+*/
+.flash-message {
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* ADDED 11/27 */
+.flash-message.error {
+    color: #842029;
+    background-color: #f8d7da;
+}
+
+/* ADDED 11/27 */
+.flash-message.success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+}
+
+/* ADDED 11/27 */
+.account-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* ADDED 11/27 */
+.logout-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: #b54b42;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ADDED 11/27 */
+.logout-button:hover {
+    background-color: #8f3832;
 }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - Online Bookstore</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='images/book_icon.jpeg') }}" alt="Book icon" class="book-icon">
+
+            <div class="brand">
+                <h1>Online Bookstore</h1>
+                <span>Read everywhere, escape anywhere</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container">
+
+        <section class="auth-card">
+
+            <h2>Create Account</h2>
+            <p>Register to use the bookstore.</p>
+
+            <!-- ADDED:
+                 Displays account creation errors.
+            -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-message {{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('create_account') }}">
+
+                <label for="firstName">First Name</label>
+
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name</label>
+
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="username">Username</label>
+
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirm_password">
+                    Confirm Password
+                </label>
+
+                <input type="password" id="confirm_password" name="confirm_password" required>
+
+                <button type="submit" class="auth-button">
+                    Create Account
+                </button>
+            </form>
+
+            <p class="auth-footer">
+                Already have an account?
+
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+            </p>
+
+            <a href="{{ url_for('index') }}" class="back-link">
+                Back to bookstore
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account - Online Bookstore</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='images/book_icon.jpeg') }}" alt="Book icon" class="book-icon">
+
+            <div class="brand">
+                <h1>Online Bookstore</h1>
+                <span>Read everywhere, escape anywhere</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container">
+
+        <section class="account-card">
+
+            <h2>Welcome, {{ customer.firstName }}!</h2>
+
+            <p>
+                You are logged in as
+                <strong>{{ customer.username }}</strong>.
+            </p>
+
+            <p>
+                Name:
+                {{ customer.firstName }} {{ customer.lastName }}
+            </p>
+
+            <div class="account-actions">
+                <a href="{{ url_for('index') }}" class="auth-button">
+                    Browse Books
+                </a>
+
+                <a href="{{ url_for('logout') }}" class="logout-button">
+                    Logout
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
